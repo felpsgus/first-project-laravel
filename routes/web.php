@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdressController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AdressController::class, "index"])->name('home');
+
+Route::get('/search', [AdressController::class, "search"])->name('search');
+
+Route::post('/save', [AdressController::class, "save"])->name('save');
