@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdressController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,9 +11,6 @@ use App\Http\Controllers\AdressController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', [AdressController::class, "index"])->name('home');
-
-Route::get('/search', [AdressController::class, "search"])->name('search');
-
-Route::post('/save', [AdressController::class, "save"])->name('save');
+Route::get("/", function () {
+    return view("welcome");
+});
